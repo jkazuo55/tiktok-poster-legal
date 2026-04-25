@@ -15,49 +15,70 @@
         }
         h1 { font-size: 1.8rem; }
         h2 { font-size: 1.2rem; margin-top: 2rem; }
-        a { color: #0066cc; text-decoration: none; }
+        a { color: #6d28d9; text-decoration: none; }
         a:hover { text-decoration: underline; }
         .back { margin-top: 3rem; }
         .updated { color: #555; font-size: 0.9rem; }
+        ul { padding-left: 1.25rem; }
+        ul li { margin: 6px 0; }
     </style>
 </head>
 <body>
     <h1>Privacy Policy</h1>
-    <p class="updated">Last updated: April 9, 2026</p>
+    <p class="updated">Last updated: April 25, 2026</p>
 
     <h2>1. Introduction</h2>
-    <p>This Privacy Policy describes how VideoAutoPost ("the App") handles information. The App is a personal automation tool designed for a single user to publish videos to their own TikTok account via the official TikTok API.</p>
+    <p>This Privacy Policy describes how VideoAutoPost ("the Service") collects, uses and protects information when creators, social media managers, agencies and teams use the Service to schedule, publish and measure videos on TikTok accounts they have connected.</p>
 
     <h2>2. Information We Collect</h2>
-    <p>The App does not collect, store, or process personal data from third parties. The only data handled by the App is:</p>
+    <p>When a user connects a TikTok account through the official Login Kit (OAuth 2.0), the Service collects and processes the following:</p>
     <ul>
-        <li><strong>TikTok API credentials:</strong> OAuth tokens required to authenticate the user's own TikTok account.</li>
-        <li><strong>Video files:</strong> Content provided by the user for upload to TikTok.</li>
+        <li><strong>Authentication tokens:</strong> short-lived OAuth access tokens and refresh tokens issued by TikTok, encrypted at rest.</li>
+        <li><strong>Profile information (<code>user.info.profile</code>):</strong> public profile basics needed to identify each connected account.</li>
+        <li><strong>Account stats (<code>user.info.stats</code>):</strong> follower count, total likes and video count, used to populate dashboard metrics.</li>
+        <li><strong>Video list (<code>video.list</code>):</strong> metadata of videos already published on the connected account.</li>
+        <li><strong>Uploaded video files:</strong> content provided by the user for publishing through the Content Posting API (Direct Post).</li>
+        <li><strong>Service account data:</strong> email address, workspace and team membership, and minimal usage logs to operate the Service.</li>
     </ul>
 
     <h2>3. How We Use Information</h2>
-    <p>All information is used solely for the purpose of uploading and publishing videos to the user's own TikTok account. No data is shared with, sold to, or disclosed to any third party.</p>
+    <p>The Service uses the information above only to:</p>
+    <ul>
+        <li>Authenticate users and the TikTok accounts they have explicitly authorized.</li>
+        <li>Schedule and publish videos to those accounts via the Content Posting API.</li>
+        <li>Display performance metrics in the dashboard.</li>
+        <li>Operate, secure, and improve the Service.</li>
+    </ul>
+    <p>The Service only acts on TikTok accounts that the user has explicitly authorized, and only within the scopes granted on the consent screen.</p>
 
-    <h2>4. Data Storage</h2>
-    <p>Authentication tokens are stored locally on the user's own device. The App does not use external databases, analytics services, or cloud storage for user data.</p>
+    <h2>4. Sharing of Information</h2>
+    <p>We do not sell user data. Information is shared only with:</p>
+    <ul>
+        <li>TikTok, when calling the official TikTok APIs on behalf of the authorized user.</li>
+        <li>Infrastructure providers (e.g. hosting, encrypted database, secure file storage) acting as data processors under contract.</li>
+        <li>Authorities, when legally required.</li>
+    </ul>
 
-    <h2>5. Third-Party Services</h2>
-    <p>The App communicates exclusively with the official TikTok API to perform its functions. The use of TikTok's API is governed by TikTok's own Privacy Policy and Developer Terms. No other third-party services are used.</p>
+    <h2>5. Data Storage and Security</h2>
+    <p>OAuth tokens and uploaded videos are stored encrypted at rest. Access to production data is limited to authorized personnel and is logged. Tokens are rotated and refreshed using TikTok's standard flows.</p>
 
-    <h2>6. Data Retention</h2>
-    <p>The App does not retain video files or personal data after a video has been successfully uploaded. OAuth tokens remain stored locally until the user revokes access or deletes them.</p>
+    <h2>6. Third-Party Services</h2>
+    <p>The Service communicates with the official TikTok APIs to perform its functions. Use of TikTok's APIs is governed by TikTok's own Privacy Policy and Developer Terms.</p>
 
-    <h2>7. User Rights</h2>
-    <p>Since all data is stored locally and the App operates on a single-user basis, the user has full control over their data at all times. To revoke access, simply remove the App's authorization from your TikTok account settings.</p>
+    <h2>7. Data Retention</h2>
+    <p>Authentication tokens are retained for as long as the connection is active. Uploaded video files are deleted after a successful publish or shortly after the scheduled job completes. Metrics history is retained for the period stated in the active plan. Users can disconnect an account at any time, which deletes the associated tokens.</p>
 
-    <h2>8. Children's Privacy</h2>
-    <p>The App is not intended for use by anyone under the age of 13. No data from children is knowingly collected.</p>
+    <h2>8. User Rights</h2>
+    <p>Users can disconnect TikTok accounts directly from the dashboard, or revoke access from TikTok &rarr; Settings &rarr; Manage app permissions. Users can also request export or deletion of their Service account data by contacting us.</p>
 
-    <h2>9. Changes to This Policy</h2>
-    <p>This Privacy Policy may be updated at any time. Changes will be reflected on this page with an updated revision date.</p>
+    <h2>9. Children's Privacy</h2>
+    <p>The Service is not intended for use by anyone under the age of 13, or under the minimum age required by applicable law. We do not knowingly collect data from children.</p>
 
-    <h2>10. Contact</h2>
-    <p>For questions about this Privacy Policy, please open an issue on the project's GitHub repository.</p>
+    <h2>10. Changes to This Policy</h2>
+    <p>This Privacy Policy may be updated from time to time. Changes will be reflected on this page with an updated revision date.</p>
+
+    <h2>11. Contact</h2>
+    <p>For questions about this Privacy Policy or to exercise your rights, please contact us at <a href="mailto:hello@videoautopost.app">hello@videoautopost.app</a>.</p>
 
     <p class="back"><a href="index.html">&larr; Back</a></p>
 </body>
